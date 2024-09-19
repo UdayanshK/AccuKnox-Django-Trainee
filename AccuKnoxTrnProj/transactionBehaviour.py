@@ -39,14 +39,14 @@ def signal_test():
 # Calling the test function
 signal_test()
 
-"""
-The signal is fired before the transaction is committed, 
-meaning the signal handler is called when the model's save() method is executed, 
-not when the transaction is committed. 
-So, even if the transaction is rolled back later, the signal still runs.
-The signal handler runs even though the transaction is rolled back 
-(and the object is not actually saved to the database). 
-This indicates that the signal is not bound to the success or failure of the transaction. 
-Instead, it is triggered as soon as the database save operation is attempted, 
-regardless of the eventual outcome of the transaction.
-"""
+#Answer: DJANGO SIGNALS DO NOT RUN IN THE SAME DB TRANSACTION AS THE CALLER, UNLESS EXPLICITLY CONFIGURED TO DO SO
+
+# The signal is fired before the transaction is committed,
+# meaning the signal handler is called when the model's save() method is executed,
+# not when the transaction is committed.
+# So, even if the transaction is rolled back later, the signal still runs.
+# The signal handler runs even though the transaction is rolled back
+# (and the object is not actually saved to the database).
+# This indicates that the signal is not bound to the success or failure of the transaction.
+# Instead, it is triggered as soon as the database save operation is attempted,
+# regardless of the eventual outcome of the transaction.

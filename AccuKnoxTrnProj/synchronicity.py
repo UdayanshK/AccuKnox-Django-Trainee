@@ -18,6 +18,8 @@ def mySender():
 # let us send the signal
 mySender()
 
+# Answer: DJANGO SIGNALS ARE EXECUTED SYNCHRONOUSLY
+
 # if the signal execution were asynchronous,then the line
 # "mySender speaking..." would be printed immediately,
 # without waiting for the receiver to complete its task.

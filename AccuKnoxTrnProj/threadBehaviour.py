@@ -17,6 +17,8 @@ def threadSender():
 # now let's call the signal sender
 threadSender()
 
+# Answer: DJANGO SIGNALS RUN IN THE SAME THREAD AS THE CALLER, UNLESS SOMEHOW EXPLICITY PROGRAMMED TO DO SO
+
 # you should see 2 lines in the console
 # that have the same thread id
 # proving that a signal runs in the
