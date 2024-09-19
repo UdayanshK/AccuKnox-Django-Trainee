@@ -28,10 +28,10 @@ def signal_test():
             # Create and save an object inside the transaction
             obj = MyModel.objects.create(name="Test Object")
             print("Object created in the transaction")
-            # Raise an exception to roll back the transaction
+            # Raise an exception so the transaction gets rolled back
             raise Exception("Rolling back the transaction")
     except Exception as e:
-        print(f"Transaction rolled back: {e}")
+        print(f"Transactiom rolled back: {e}")
 
     # Check if the signal handler still ran
     print("End of test")
